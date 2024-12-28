@@ -1,0 +1,3 @@
+[submodule "deps/lv_binding_js"]
+	path = deps/lv_binding_js
+	url = https://github.com/lvgl/lv_binding_js.git

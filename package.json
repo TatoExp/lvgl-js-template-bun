@@ -1,0 +1,37 @@
+{
+  "name": "lvgl-js-template",
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "git:init": "git submodule update --init --recursive && bun install",
+    "setup": "bun run git:init && cd deps/lv_binding_js && make simulator",
+    "bundle": "bun build src/index.jsx --outdir dist --external tjs:path",
+    "prestart:sim": "bun run bundle",
+    "start:sim": "./deps/lv_binding_js/build/lvgljs run dist/index.js"
+  },
+  "devDependencies": {
+    "@types/react": "^16.13.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "lvgljs-ui": "./deps/lv_binding_js/src/render/react",
+    "buffer": "^6.0.3",
+    "core-js": "^3.23.2",
+    "esbuild": "^0.14.43",
+    "fetch-blob": "^3.2.0",
+    "nodemon": "^3.1.4",
+    "react": "^16.13.1",
+    "react-proxy": "^2.0.8",
+    "react-reconciler": "^0.25.1",
+    "react-router": "^6.3.0",
+    "text-encoding": "^0.7.0",
+    "urlpattern-polyfill": "^5.0.3",
+    "util": "^0.12.4",
+    "web-streams-polyfill": "^3.2.1",
+    "webpack": "^5.73.0",
+    "webpack-dev-server": "^4.9.2",
+    "whatwg-fetch": "^3.6.2"
+  }
+}
